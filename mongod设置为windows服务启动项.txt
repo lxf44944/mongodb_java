@@ -1,0 +1,14 @@
+mongod --logpath F:/lxf/mongodb/logs/mongodb.log --logappend --dbpath F:/lxf/mongodb/data/db --directoryperdb --serviceName MongoDB --install
+
+
+成功创建windows服务显示：
+Thu Jun 16 11:26:32.093 Trying to install Windows service 'MongoDB'
+Thu Jun 16 11:26:33.718 Service 'MongoDB' (Mongo DB) installed with command line 'F:\lxf\mongodb\bin\mongod.exe --logpath F:/lxf/mongodb/logs/mongodb.log --logappend --dbpath F:/lxf/mongodb/data/db --directoryperdb --service'
+Thu Jun 16 11:26:33.734 Service can be started from the command line with 'net start MongoDB'
+
+该命令行指定了日志文件：/logs/MongoDB.log，日志是以追加的方式输出的；
+数据文件目录：/data/db，并且参数--directoryperdb说明每个DB都会新建一个目录；
+Windows服务的名称：MongoDB；
+以上的三个参数都是可以根据自己的情况而定的。
+最后是安装参数：--install，与之相对的是--remove
+以后就可以在cmd下用命令net start MongoDB和net stop MongoDB来启动和停止MongoDB了，也可以在本地服务中看到通过界面来管理该服务。
